@@ -3,8 +3,8 @@ import sys
 
 t1, t2, a1, a2 = map(int, input().split())
 
-def is_prime(v):
 
+def is_prime(v):
     return len([k for k in range(2, floor(sqrt(v) + 1)) if (v) % k == 0]) == 0
 
 
