@@ -7,28 +7,30 @@ for i in range(n):
 
 b = 6
 
+
 def check(box):
     for i in range(b):
         # horizontal
-        if len(['#' for k in range(b) if box[i][k] == '#']) >= 4:
+        if len(["#" for k in range(b) if box[i][k] == "#"]) >= 4:
             return True
         # vertical
-        if len(['#' for k in range(b) if box[k][i] == '#']) >= 4:
+        if len(["#" for k in range(b) if box[k][i] == "#"]) >= 4:
             return True
 
-    if len(['#' for k in range(b) if box[k][k] == '#']) >= 4:
+    if len(["#" for k in range(b) if box[k][k] == "#"]) >= 4:
         return True
-    if len(['#' for k in range(b) if box[k][b-k-1] == '#']) >= 4:
+    if len(["#" for k in range(b) if box[k][b - k - 1] == "#"]) >= 4:
         return True
+
 
 for y in range(n - b + 1):
     for x in range(n - b + 1):
-        box = [k[x:x+b] for k in s[y:y+b]]
+        box = [k[x : x + b] for k in s[y : y + b]]
         if check(box):
-            print('Yes')
+            print("Yes")
             sys.exit()
 
-print('No')
+print("No")
 
 
 # def vcheck(i, j, cnt=0, dot_cnt=0):
